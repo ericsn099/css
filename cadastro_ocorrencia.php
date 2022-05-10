@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="refresh" content="0;url=ocorrencia.php">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,17 +17,18 @@
     <div class="container">
         <div class="row-9">
             <?php
-            include "conexao.php";
+                include "conexao.php";
 
-            $publicacao = $_POST['publicacao'];
-            $nivel = $_POST['nivel'];
-            $situacao = $_POST['cmocorrencia'];
-            $bairro = $_POST['cmbairros'];
-            $rua = $_POST['cmrua'];
-            $sql = "INSERT INTO `publicacaoagente`(`publicacao`, `nivel`, `id_situacao`,`id_agente`, `id_bairro`, `id_rua`) 
+                $publicacao = $_POST['publicacao'];
+                $nivel = $_POST['nivel'];
+                $situacao = $_POST['cmocorrencia'];
+                $bairro = $_POST['cmbairros'];
+                $rua = $_POST['cmrua'];
+                $sql = "INSERT INTO `publicacaoagente`(`publicacao`, `nivel`, `id_situacao`,`id_agente`, `id_bairro`, `id_rua`) 
                         VALUES ('$publicacao','$nivel','$situacao','1','$bairro','$rua')";
+                
+                mysqli_query($conn, $sql);
             ?>
-            <a href="ocorrencia.php" class="btn btn-primary"> Voltar </a>
         </div>
     </div>
 
@@ -38,10 +38,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    -->
+    <script>
+        window.location.replace("http://localhost/Community-System-Security-mai/Ocorrencia.php");
+    </script>
+
 </body>
 
 </html>
