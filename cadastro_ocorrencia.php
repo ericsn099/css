@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <meta http-equiv="refresh" content="0;url=ocorrencia.php">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,22 +18,15 @@
     <div class="container">
         <div class="row-9">
             <?php
-                include "conexao.php";
+            include "conexao.php";
 
-                $publicacao = $_POST['publicacao'];
-                $nivel = $_POST['nivel'];
-                $situacao = $_POST['cmocorrencia'];
-                $bairro = $_POST['cmbairros'];
-                $rua = $_POST['cmrua'];
-                $sql = "INSERT INTO `publicacaoagente`(`publicacao`, `nivel`, `id_situacao`,`id_agente`, `id_bairro`, `id_rua`) 
+            $publicacao = $_POST['publicacao'];
+            $nivel = $_POST['nivel'];
+            $situacao = $_POST['cmocorrencia'];
+            $bairro = $_POST['cmbairros'];
+            $rua = $_POST['cmrua'];
+            $sql = "INSERT INTO `publicacaoagente`(`publicacao`, `nivel`, `id_situacao`,`id_agente`, `id_bairro`, `id_rua`) 
                         VALUES ('$publicacao','$nivel','$situacao','1','$bairro','$rua')";
-                
-                if( mysqli_query($conn, $sql)){
-                   echo msg('Ocorrência cadastrada com sucesso', 'success');
-               }else{
-                echo msg('Erro ao enviar pro banco.', 'danger');
-               }
-            
             ?>
             <a href="ocorrencia.php" class="btn btn-primary"> Voltar </a>
         </div>
