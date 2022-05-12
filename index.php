@@ -21,6 +21,9 @@
         .btn{
             width: 150px;
         }
+        .navbar{
+            width: 1000px;
+        }
     </style>
 </head>
 
@@ -40,11 +43,11 @@
             <div class="col">
                 <nav class="navbar navbar-light bg-light col-6">
                     <div class="container-fluid ">
-                        <a class="navbar-brand">Ocorrências</a>
                         <form class="d-flex" action="" method="POST">
                             <input class="form-control me-2" type="search" placeholder="Bairro" aria-label="Search" name="busca">
                             <button class="btn btn-outline-success" type="submit">Pesquisar</button>
                         </form>
+                        <a href="login.php" class="btn btn-primary"> ENTRAR </a>
                     </div>
                 </nav>
                 <div class="dashbord">
@@ -147,11 +150,11 @@
                         <?php
 
                         while ($pub = mysqli_fetch_assoc($dados)) {
-                            $qtdLike = 0;
+                            /*$qtdLike = 0;
                             if (isset($_POST['like'])) {
                                 $qtdLike++;
                             }
-                            /*  if( isset( $_POST['mes'] ) ) {
+                            if( isset( $_POST['mes'] ) ) {
                                 $mes = 0 + $_POST['mes'];
                              } else {
                                 $mes = 0 + date('m');
@@ -184,7 +187,7 @@
                                                
                                                 <div class='op-post'>
                                                     <form method='POST'> 
-                                                        <span class='n-like'>$qtdLike</span>
+                                                        <span class='n-like'></span>
                                                         <button name='like'><i class= 'fa-solid fa-thumbs-up'></i></button>
                                                     </form>
                                                     <span>Curti</span>

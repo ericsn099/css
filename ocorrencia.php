@@ -5,11 +5,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-
     <title>Vigilante</title>
 </head>
 <?php
@@ -51,7 +49,7 @@ $dados3 = mysqli_query($conn, $sqlTipo);
                             <?php
                             while ($linha = mysqli_fetch_assoc($dados2)) {
                                 $nome = $linha['nome'];
-                                echo "<option  value='". $linha['id_bairro'] ."' data-bairro='" . $linha['id_bairro'] . "'> $nome </option>";
+                                echo "<option  value='" . $linha['id_bairro'] . "' data-bairro='" . $linha['id_bairro'] . "'> $nome </option>";
                             }
                             ?>
                             </option>
@@ -60,11 +58,11 @@ $dados3 = mysqli_query($conn, $sqlTipo);
                     <div class="form-group mb-3">
                         <label for="">Tipo de Ocorrencia</label><br>
                         <select class="custom-select form-select" id="sl_ocorrencias" name='cmocorrencia'>
-                        <option selected disabled>Selecione..</option>
+                            <option selected disabled>Selecione..</option>
                             <?php
                             while ($linha = mysqli_fetch_assoc($dados3)) {
                                 $nome = $linha['tipo'];
-                                echo "<option  value='". $linha['id'] ."'> $nome </option>";
+                                echo "<option  value='" . $linha['id'] . "'> $nome </option>";
                             }
                             ?>
                         </select>
@@ -86,10 +84,13 @@ $dados3 = mysqli_query($conn, $sqlTipo);
                     </div>
                     <div class="d-grid gap-2 d-md-block">
                         <button class="btn btn-success" type="submit">Salvar</button>
-                        <a href="pesquisarOcorrencia.php" class="btn btn-primary"> HOME </a>
+                        <a href="index.php" class="btn btn-primary"> Ocorrencias </a>
+
                     </div>
                 </form>
-
+                <form action="sair.php">
+                    <button class="btn btn-primary"> SAIR </button>
+                </form>
             </div>
         </div>
     </div>
