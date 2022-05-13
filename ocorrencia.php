@@ -88,7 +88,7 @@ $dados3 = mysqli_query($conn, $sqlTipo);
 
                     </div>
                 </form>
-                <form action="sair.php">
+                <form action="sair.php" >
                     <button class="btn btn-primary"> SAIR </button>
                 </form>
             </div>

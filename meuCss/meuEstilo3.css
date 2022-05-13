@@ -14,6 +14,39 @@
 }
 
 
+.publicacoes{
+    width: 100%;
+    height:auto;
+}
+
+.publicacoes .ocorrencia{
+    width: 800px;
+    margin-bottom: 30px;
+}
+
+.ocorrencia .oc-titulo h3{
+    margin-left: 20px;
+    font-size: 24px;
+    font-family: var(--font-secundary);
+}
+
+.ocorrencia .oc-titulo .opcao{
+    margin-right: 30px;
+}
+
+.ocorrencia .oc-body p{
+    font-size: 22px;
+    padding-left: 10px;
+}
+
+.dash-info{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
 @media (min-width: 375px) {
     header{
@@ -22,6 +55,7 @@
         padding: 5px 10px;
         display: flex;
         align-items: center;
+      
     }
 
     header form{
@@ -85,13 +119,14 @@
         right: 0;
         left: 0;
         bottom: 0;
-        background-color: rgba(0,0,0,0.8);
         display: none;
+        transition: all ease .3s;
     }
 
     .menu-lateral{
         width: 100%;
         height: 100%;
+        background-color: rgba(0,0,0,0.8);
         border:2px solid #fff;
         display: flex;
         justify-content: center;
@@ -119,7 +154,18 @@
         cursor: pointer;
         letter-spacing: 2px;
         line-height: 60px;
-        font-weight: 600;
+        font-weight: bold;
+        text-shadow: 0px 0px 5px #daa520;
+        border-bottom: 2px solid transparent;
+        transition: all ease .5s;
+    }
+
+    .menu-lateral nav ul li a:hover{
+        border-bottom: 2px solid #daa520;
+    }
+
+    .abrirMenuLateral{
+        display: flex;
     }
 
     /*DASHBORD */
@@ -142,6 +188,11 @@
         width: 160px;
         height: 100px;
         border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        
     }
 
     .dash-item:nth-child(1){
@@ -169,7 +220,7 @@
         background-color: #191919;
         margin-top: 30px;
         padding-top: 20px;
-        background-image: url('./img/wave.svg');
+        background-image: url('img/wave.svg');
         background-size: cover;
         background-position: center;
         background-repeat: repeat;
@@ -182,7 +233,7 @@
         max-width: 90%;
         margin:auto;
         background-color: #fff;
-        box-shadow: 0px 0px 10px #1fb34193;
+        box-shadow: 0px 0px 20px #1fb34193;
         padding:5px 0 10px 0;
         border-radius: 10px;
         margin-bottom: 30px;
@@ -207,7 +258,8 @@
     }
 
     .oc-header button i {
-        font-size: 20px;
+        font-size: 28px;
+        color: #191919;
     }
 
     .oc-titulo{
@@ -295,30 +347,76 @@
         display: none;
         justify-content: center;
         align-items: center;
+       
     }
 
     .comentario-area{
         width: 100%;
-        height: 600px;
+        height: 90vh;
         background-color: #fff;
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         justify-content: center;
+        flex-direction: column;
+        border-radius: 5px;
+    }
+
+    .comentarios-area{
+        flex:1;
+        width: 100%;
+        background-color: #444341;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .inserir-comentario{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .fechar-cometario{
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 10px;
+    }
+
+    .fechar-cometario button{
+        border:0;
+        outline: 0;
+        cursor: pointer;
+        background-color: transparent;
+    }
+
+    .fechar-cometario button img{
+       width: 20px;
+       height: 20px;
     }
     .inserir-comentario form{
+        
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding-bottom: 10px;
+        margin-top: 10px;
     }
 
     
     .inserir-comentario textarea{
-        width: 270px;
-        height:60px;
+        width: 280px;
+        height:50px;
         padding-left: 10px;
         padding-top: 5px;
         outline: 0;
+        resize: none;
     }
     .inserir-comentario textarea:hover{
         box-sizing: 0px 0px 10px rgba(51, 147, 237, 0.333);
@@ -326,13 +424,49 @@
     .inserir-comentario button{
         padding: 7px;
         margin-left: 10px;
+        border:0;
+        outline: 0;
+        background-color: transparent;
+    }
+
+    .inserir-comentario button img{
+        width: 50px;
+        height: 50px;
     }
 
     .comentario-off{
+        display: none;
+    }
+
+    .comentario-open{
         display: flex;
     }
+
+   
 }   
 
+.oc-header{
+    height: 40px;
+    border-bottom: 1px solid #333;
+    display: flex;
+    justify-content:space-between;
+}
+
+.leftSide{
+    flex:1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.rightSide{
+    flex:1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 20px;
+}
 
 @media (min-width: 420px) {
     header{
@@ -366,7 +500,6 @@
     .menu{
         width: 60px;
         height: 60px;
-        background-color: #f31b42;
         margin-right: 20px;
     }
 
@@ -436,14 +569,14 @@
         box-shadow: 0px 0px 10px #07a958;
         padding:5px 0 15px 0;
         border-radius: 10px;
+        margin-bottom: 30px;
     }
 
     .oc-header{
-        width: 100%;
         height: 40px;
         border-bottom: 1px solid #333;
         display: flex;
-        justify-content: flex-end;
+        justify-content:space-between;
     }
 
     .oc-header button{
@@ -473,13 +606,13 @@
     .oc-titulo h3{
         font-size: 18px;
     }
-
-    .opcao{
+    
+    /*.opcao{
         width: 30px;
         height: 30px;
         background-color: #19e642;
         border-radius: 50%;
-    }
+    }*/
 
     .oc-body{
         width: 100%;
@@ -576,7 +709,6 @@
     .menu{
         width: 60px;
         height: 60px;
-        background-color: #f31b42;
         margin-right: 20px;
     }
 
