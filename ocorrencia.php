@@ -1,14 +1,12 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-br">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Vigilante</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="meuEstilo4.css" />
+    <title>Ocorrência</title>
 </head>
 <?php
 include "conexao.php";
@@ -23,75 +21,79 @@ $dados3 = mysqli_query($conn, $sqlTipo);
 ?>
 
 <body>
+    <div class="ocorrencia">
+        <div class="ocorrencia-area">
+            <div class="ocorrencia-img">
 
-    <div class="container">
-        <div class="row-9">
-            <div class="col-9">
-                <h1>Ocorrência</h1>
-                <form action="cadastro_ocorrencia.php" method="POST">
-                    <div class="form-group mb-3">
-                        <label for="">Bairros</label><br>
-                        <select class="custom-select form-select" id="sl_bairros" name='cmbairros'>
-                            <option selected disabled>Selecione..</option>
-                            <?php
-                            while ($linha = mysqli_fetch_assoc($dados)) {
-                                $idBairro = $linha['id'];
-                                $nome = $linha['nomeBairro'];
-                                echo "<option value='$idBairro'> $nome </option>";
-                            }
-                            ?>
-                        </select>
+            </div>
+        </div>
+        <div class="ocorrencia-form">
+            <form action="cadastro_ocorrencia.php" method="POST">
+                <div class="form-img">
+                    <div class="form-img-area">
+                        <img src="img/logo_css.png" alt="Imagem logo">
                     </div>
-                    <div class="form-group mb-3">
-                        <label for="">Ruas</label><br>
-                        <select class="custom-select form-select" id="sl_ruas" name='cmrua'>
-                            <option selected disabled>Selecione..</option>
-                            <?php
-                            /*while ($linha = mysqli_fetch_assoc($dados2)) {
+                </div>
+                <div class="form-item">
+                    <label for="">Bairros</label>
+                    <select id="sl_bairros" name='cmbairros'>
+                        <option>Selecione..</option>
+                        <?php
+                        while ($linha = mysqli_fetch_assoc($dados)) {
+                            $idBairro = $linha['id'];
+                            $nome = $linha['nomeBairro'];
+                            echo "<option value='$idBairro'> $nome </option>";
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="form-item">
+                    <label for="">Ruas</label>
+                    <select class="custom-select form-select" id="sl_ruas" name='cmrua'>
+                        <option selected disabled>Selecione..</option>
+                        <?php
+                        /*while ($linha = mysqli_fetch_assoc($dados2)) {
                                 $nome = $linha['nome'];
                                 echo "<option  value='" . $linha['id_bairro'] . "' data-bairro='" . $linha['id_bairro'] . "'> $nome </option>";
                             }*/
-                            ?>
-                            </option>
-                        </select>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="">Tipo de Ocorrencia</label><br>
-                        <select class="custom-select form-select" id="sl_ocorrencias" name='cmocorrencia'>
-                            <option selected disabled>Selecione..</option>
-                            <?php
-                            while ($linha = mysqli_fetch_assoc($dados3)) {
-                                $nome = $linha['tipo'];
-                                echo "<option  value='" . $linha['id'] . "'> $nome </option>";
-                            }
-                            ?>
-                        </select>
-                    </div>
+                        ?>
+                        </option>
+                    </select>
+                </div>
+                <div class="form-item">
+                    <label for="">Tipo de Ocorrência</label>
+                    <select id="sl_ocorrencias" name='cmocorrencia'>
+                        <option>Selecione..</option>
+                        <?php
+                        while ($linha = mysqli_fetch_assoc($dados3)) {
+                            $nome = $linha['tipo'];
+                            echo "<option  value='" . $linha['id'] . "'> $nome </option>";
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="form-item">
                     <div class="ball">
                         <div data-key="1" name="verde" class="item"></div>
                         <div data-key="2" name="amarelo" class="item"></div>
                         <div data-key="3" name="vermelho" class="item"></div>
-                        <select class="form-select form-select-sm " aria-label=".form-select-sm example" name="nivel" require>
-                            <option selected disabled>Nível de Ocorrência</option>
+                        <select name="nivel" >
+                            <option>Nível de Ocorrência</option>
                             <option value="1">Verde (Seguro)</option>
                             <option value="2">Amarelo (Alerta)</option>
                             <option value="3">Vermelho (Perigo)</option>
                         </select>
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Publicacão</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="publicacao" require></textarea>
-                    </div>
-                    <div class="d-grid gap-2 d-md-block">
-                        <button class="btn btn-success" type="submit">Salvar</button>
-                        <a href="index.php" class="btn btn-primary"> Ocorrencias </a>
-
-                    </div>
-                </form>
-                <form action="sair.php">
-                    <button class="btn btn-primary"> SAIR </button>
-                </form>
-            </div>
+                </div>
+                <div class="form-item">
+                    <label>Publicação</label>
+                    <textarea name="publicacao" require></textarea>
+                </div>
+                <div class="botoes">
+                    <button type="submit">Salvar</button>
+                    <button> <a href="index.php"></a>Ocorrências</button>
+                </div>
+            </form>
         </div>
     </div>
 
@@ -108,15 +110,15 @@ $dados3 = mysqli_query($conn, $sqlTipo);
             $("#sl_bairros").change(function() {
                 var id_bairro = $(this).val();
                 $("#sl_ruas option").remove();
-                
+
                 //$("#sl_ruas option[data-bairro='" + id_bairro + "']").show();
 
                 $.ajax({
-                    type : 'post',
+                    type: 'post',
                     url: 'ajax/getRuas.php',
                     data: {
-                        "id_bairro" : $("#sl_bairros").val(),
-                        "ruas_option" : "select"
+                        "id_bairro": $("#sl_bairros").val(),
+                        "ruas_option": "select"
                     },
                     dataType: 'json',
                     success: function(data) {
