@@ -10,5 +10,5 @@
     $bd = "sistemacc";
   */
     $conn = mysqli_connect($server,$user,$pass,$bd);
-
+    mysqli_connect_error() ;
 ?>
