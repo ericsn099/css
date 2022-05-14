@@ -9,6 +9,5 @@
     $pass = "19019407eric@";
     $bd = "sistemacc";
   */
-  
     $conn = mysqli_connect($server,$user,$pass,$bd);
 ?>
