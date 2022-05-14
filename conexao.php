@@ -1,5 +1,4 @@
 <?php
-
     $server = "sql105.epizy.com";
     $user = "epiz_31720665";
     $pass = "zFLwDjPU8yUUf";
@@ -10,7 +9,6 @@
    }else{
       
    }
-
    function msg($texto, $tipo){
        echo "<div class='alert alert-$tipo' role='alert'>
                $texto;

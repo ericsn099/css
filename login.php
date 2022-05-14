@@ -43,7 +43,6 @@
                     </div>
                     <div class="botao">
                         <button>Acessar</button>
-                        <button><a href="index.php"> HOME </a></button>
                     </div>
                     <div class="nova-conta">
                         <a href="">Cria nova conta</a>
