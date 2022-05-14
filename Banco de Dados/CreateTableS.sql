@@ -2,7 +2,7 @@ create table agente(
 	id int auto_increment not null primary key,
     cpf varchar(50) not null,
     nome varchar(50) not null,
-    login varchar(50) not null,
+    login varchar(50) not null unique,
     senha varchar(50) not null,
 	email varchar(100) not null    
 );
@@ -10,7 +10,7 @@ create table agente(
 create table administrador(
 	id int auto_increment not null primary key,
     nome varchar(50) not null,
-    login varchar(50) not null,
+    login varchar(50) not null unique,
     senha varchar(50) not null
 
 );
