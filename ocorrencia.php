@@ -14,11 +14,11 @@
 include "conexao.php";
 
 $sqlBairro = "SELECT * FROM bairro";
-$sqlRua = "SELECT * FROM rua ";
+//$sqlRua = "SELECT * FROM rua ";
 $sqlTipo = "SELECT * FROM situacao";
 
 $dados = mysqli_query($conn, $sqlBairro);
-$dados2 = mysqli_query($conn, $sqlRua);
+//$dados2 = mysqli_query($conn, $sqlRua);
 $dados3 = mysqli_query($conn, $sqlTipo);
 ?>
 
@@ -47,10 +47,10 @@ $dados3 = mysqli_query($conn, $sqlTipo);
                         <select class="custom-select form-select" id="sl_ruas" name='cmrua'>
                             <option selected disabled>Selecione..</option>
                             <?php
-                            while ($linha = mysqli_fetch_assoc($dados2)) {
+                            /*while ($linha = mysqli_fetch_assoc($dados2)) {
                                 $nome = $linha['nome'];
                                 echo "<option  value='" . $linha['id_bairro'] . "' data-bairro='" . $linha['id_bairro'] . "'> $nome </option>";
-                            }
+                            }*/
                             ?>
                             </option>
                         </select>
@@ -88,7 +88,7 @@ $dados3 = mysqli_query($conn, $sqlTipo);
 
                     </div>
                 </form>
-                <form action="sair.php" >
+                <form action="sair.php">
                     <button class="btn btn-primary"> SAIR </button>
                 </form>
             </div>
@@ -97,20 +97,32 @@ $dados3 = mysqli_query($conn, $sqlTipo);
 
     <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <!-- Option 1: Bootstrap Bundle with Popper 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+-->
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            $("#sl_ruas option").hide();
             $("#sl_bairros").change(function() {
                 var id_bairro = $(this).val();
-                $("#sl_ruas option").hide();
-                $("#sl_ruas option[data-bairro='" + id_bairro + "']").show();
+                $("#sl_ruas option").remove();
+                
+                //$("#sl_ruas option[data-bairro='" + id_bairro + "']").show();
+
+                $.ajax({
+                    type : 'post',
+                    url: 'ajax/getRuas.php',
+                    data: {
+                        "id_bairro" : $("#sl_bairros").val(),
+                        "ruas_option" : "select"
+                    },
+                    dataType: 'json',
+                    success: function(data) {
+                        $("#sl_ruas").append(data.ruas);
+                    }
+                });
             })
         })
     </script>
