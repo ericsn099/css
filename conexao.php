@@ -3,7 +3,12 @@
     $user = "epiz_31720665";
     $pass = "zFLwDjPU8yUUf";
     $bd = "epiz_31720665_sistemaCss";
-  
-    mysqli_connect($server,$user,$pass,$bd);
+  /*
+    $server = "localhost";
+    $user = "root";
+    $pass = "19019407eric@";
+    $bd = "sistemacc";
+  */
+    $conn = mysqli_connect($server,$user,$pass,$bd);
 
 ?>
