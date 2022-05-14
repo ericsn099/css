@@ -152,6 +152,21 @@ body{
     border-radius: 5px;
     transition: all ease .5s;
 }
+.botoes button a{
+    text-decoration: none;
+    margin-right: 10px;
+    font-family: var(--font-secundary);
+    font-size: 18px;
+    padding:10px 20px;
+    color: #fff;
+    font-weight: 600px;
+    border:0;
+    outline: 0;
+    background-color: #0d6efd;
+    border-radius: 5px;
+    transition: all ease .5s;
+}
+
 
 .botoes button:nth-child(1){
     background-color:rgb(13, 195, 25) ;

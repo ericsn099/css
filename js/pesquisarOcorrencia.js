@@ -1,7 +1,17 @@
+
+
+
 let cont = 0;
 
 let like = document.querySelector('.like');
 let qtd = document.querySelector('.qtd-like');
+
+
+
+
+
+
+
 
 if (like) {
     like.addEventListener('click', () => {
@@ -19,9 +29,13 @@ if (like) {
     });
 }
 
+
 /* Comentario */
 
+
 let comentario = document.querySelector('.comentario');
+
+
 
 if(comentario){
     comentario.addEventListener('click', ()=>{
@@ -33,14 +47,25 @@ if(comentario){
     }); 
 }
 
+
  let openComentario = ()=> document.querySelector('.comentar').classList.add('comentario-open');
  let closeComentario = ()=> document.querySelector('.comentar').classList.remove('comentario-open');
+
+
+
 
  const enviar = (e)=>{
      e.preventDefault();
      alert('Calma ai patrão');
  }
+
+
+
+
+
+
  /*Area menu lateral */
+
 
  let menuLateral = document.querySelector('.menu .menu-icon');
 

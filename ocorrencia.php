@@ -77,7 +77,7 @@ $dados3 = mysqli_query($conn, $sqlTipo);
                         <div data-key="1" name="verde" class="item"></div>
                         <div data-key="2" name="amarelo" class="item"></div>
                         <div data-key="3" name="vermelho" class="item"></div>
-                        <select name="nivel" >
+                        <select name="nivel">
                             <option>Nível de Ocorrência</option>
                             <option value="1">Verde (Seguro)</option>
                             <option value="2">Amarelo (Alerta)</option>
@@ -91,7 +91,7 @@ $dados3 = mysqli_query($conn, $sqlTipo);
                 </div>
                 <div class="botoes">
                     <button type="submit">Salvar</button>
-                    <button> <a href="index.php"></a>Ocorrências</button>
+                    <button><a href="index.php"> Ocorrencias </a></button>
                 </div>
             </form>
         </div>
@@ -99,10 +99,10 @@ $dados3 = mysqli_query($conn, $sqlTipo);
 
     <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 1: Bootstrap Bundle with Popper 
+    <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
--->
-
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript">
