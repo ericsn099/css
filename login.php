@@ -45,7 +45,7 @@
                         <button>Acessar</button>
                     </div>
                     <div class="nova-conta">
-                        <a href="">Cria nova conta</a>
+                        <a href="agente.php">Cria nova conta</a>
                     </div>
                 </form>
             </div> <!-- FIM ITEM DIREITA-->
