@@ -14,7 +14,7 @@
 
     $pequisa = $_POST['busca'] ?? '';
 
-    include 'conexao.php';
+    require 'conexao.php';
     $sql = "SELECT publicacaoagente.datahora, publicacaoagente.id,bairro.nomeBairro, rua.nome, publicacaoagente.nivel, publicacaoagente.publicacao from bairro,rua,publicacaoagente  where bairro.id = publicacaoagente.id_bairro and rua.id = publicacaoagente.id_rua and bairro.nomeBairro like '%$pequisa%' order by publicacaoagente.id desc";
     $dados = mysqli_query($conn, $sql);
     ?>
