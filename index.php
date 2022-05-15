@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link href="./meuCss/meuEstilo3.css" rel="stylesheet" />
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <title>Pesquisar Ocorrência</title>
+    <title>Ocorrências</title>
 </head>
 
 <body>

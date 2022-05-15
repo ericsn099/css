@@ -4,7 +4,7 @@ include "../conexao.php";
 if (isset($_POST['id_bairro'])) {
     $id_bairro = $_POST['id_bairro'];
 
-    $sqlRua = "SELECT * FROM rua WHERE id_bairro = '$id_bairro'";
+    $sqlRua = "SELECT * FROM rua WHERE id_bairro = '$id_bairro' order by nome asc";
     $dados = mysqli_query($conn, $sqlRua);
 
     $return = '';
