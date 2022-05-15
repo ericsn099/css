@@ -13,7 +13,7 @@ if (isset($_POST['id_bairro'])) {
         if ($_POST['ruas_option'] == 'select') {
             while ($linha = mysqli_fetch_assoc($dados)) {
                 $nome = $linha['nome'];
-                $return .= "<option  value='" . $linha['id_bairro'] . "' class='op_ruas' data-bairro='" . $linha['id_bairro'] . "'> $nome </option>";
+                $return .= "<option  value='" . $linha['id'] . "' class='op_ruas' data-bairro='" . $linha['id_bairro'] . "'> $nome </option>";
             }
         }
     }
