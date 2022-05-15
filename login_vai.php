@@ -1,14 +1,12 @@
 <?php
 // Conexão com o banco de dados
-require "./conexao.php";
-
 // Inicia sessões
 session_start();
-
+require "./conexao.php";
 // Recupera o login
-$login = isset($_POST["login"]) ? ($_POST["login"]) : FALSE;
+$login = $_POST["login"];
 // Recupera a senha, a criptografando em MD5
-$senha = isset($_POST["senha"]) ? ($_POST["senha"]) : FALSE;
+$senha = $_POST["senha"];
 
 // Usuário não forneceu a senha ou o login
 if(!$login || !$senha)

@@ -12300,3 +12300,10 @@ INSERT INTO rua(nome, id_bairro) values("Rua Oscar Romero",62);
 INSERT INTO rua(nome, id_bairro) values("Rua Luz Marina",62);
 INSERT INTO rua(nome, id_bairro) values("Rua Padre Jósimo",62);
 INSERT INTO rua(nome, id_bairro) values("Avenida Cosme Ferreira",62);
+
+INSERT INTO `situacao`(`tipo`) VALUES ('ASSALTO');
+INSERT INTO `situacao`(`tipo`) VALUES ('FURTO');
+INSERT INTO `situacao`(`tipo`) VALUES ('TENTATIVA DE ASSALTO');
+INSERT INTO `situacao`(`tipo`) VALUES ('SUSPEITOS');
+INSERT INTO `situacao`(`tipo`) VALUES ('PERDA DE DOCUMENTOS');
+INSERT INTO `situacao`(`tipo`) VALUES ('TIROTEIO');
